@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get The Code
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Install Project
         run: npm ci             #like install but lock the versions of npm packets
       - name: Test Project
