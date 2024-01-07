@@ -1,0 +1,12 @@
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get The Code
+        uses: actions/checkout
+      - name: Install Project
+        run: npm ci             #like install but lock the versions of npm packets
+      - name: Test Project
+        run: npm test
