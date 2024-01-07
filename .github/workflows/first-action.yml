@@ -1,10 +1,12 @@
-name: First_Workflow
-on: workflow_dispatch 
+name: Test Project
+on: push
 jobs:
-  firstJob:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hi"
-      - name: Gwd
-        run: pwd
+      - name: Get The Code
+        uses: actions/checkout
+      - name: Install Dependencies
+        run: npm ci          # like install but use logged versions
+      - name: Test Code
+        run: npm test
